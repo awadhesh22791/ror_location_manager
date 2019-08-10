@@ -2,14 +2,22 @@
 <html>
   <head>
     <title>LocationManager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container">
+    <div class="row navbar navbar-dark bg-dark">
+      <div class="col-lg-3 navbar-brand m-0">
+        Brand Logo
+      </div>
+      <div class="col-lg-9 nav-item">
+        Menu
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
