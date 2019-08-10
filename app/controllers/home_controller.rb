@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
     def index
-        puts 'home'
+        logger.info 'Loading home page.'
     end
 
     def about
-        puts 'about'
+        logger.info 'Loading about page.'
     end
 end
