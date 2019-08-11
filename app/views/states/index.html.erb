@@ -19,7 +19,7 @@
                         <td><%= state.short_name %></td>
                         <td><%= link_to "Show", state_path(state) %></td>
                         <td><%= link_to "Edit", edit_state_path(state) %></td>
-                        <td></td>
+                        <td><%= link_to "Delete", state_path(state) ,method: :delete, data: {confirm: 'Are you sure?' } %></td>
                     </tr>
                 <% end %>
             </tbody>

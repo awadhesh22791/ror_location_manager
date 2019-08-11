@@ -19,15 +19,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12">
-        <% flash.each do |name,msg| %>
-          <ul>
-            <li>
-              <%= msg%>
-            </li>
-          </ul>
-        <% end %>
-      </div>
+      <%= render 'layouts/messages' %>
     </div>
     <%= yield %>
   </body>
