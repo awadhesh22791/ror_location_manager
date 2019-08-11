@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Used paranoid gem for soft delete feature
+Use following command to add soft delete feature to model:
+rails generate migration AddDeletedAtToParanoiac deleted_at:datetime:index
