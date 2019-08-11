@@ -1,5 +1,7 @@
 class StatesController < ApplicationController
 
+    before_action :set_state, only: [:edit,:show,:update,:destroy]
+
     def index
         @states=State.page params[:page]
     end
@@ -20,15 +22,12 @@ class StatesController < ApplicationController
     end
 
     def show
-        @state=State.find(params[:id])
     end
 
     def edit
-        @state=State.find(params[:id])
     end
 
     def update
-        @state=State.find(params[:id])
         if @state.update(state_params)
             flash[:notice]="State updated successfully."
             redirect_to state_path(@state)
@@ -38,13 +37,16 @@ class StatesController < ApplicationController
     end
 
     def destroy
-        @state=State.find(params[:id])
         @state.destroy
         flash[:notice]='State deleted successfully.'
         redirect_to states_path
     end
 
     private
+        def set_state
+            @state=State.find(params[:id])
+        end
+
         def state_params
             params.require(:state).permit(:name,:short_name)
         end
