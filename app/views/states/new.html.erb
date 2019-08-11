@@ -1,0 +1,22 @@
+<h1>New State page</h1>
+<% if @state.errors.any? %>
+    <h3>Following errors found.</h3>
+    <ul>
+        <% @state.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= form_for @state do |s| %>
+    <p>
+        <%= s.label :name%>
+        <%= s.text_field :name %>
+    </p>
+    <p>
+        <%= s.label :short_name %>
+        <%= s.text_field :short_name %>
+    </p>
+    <p>
+        <%= s.submit %>
+    </p>
+<% end %>
