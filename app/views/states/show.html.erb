@@ -6,3 +6,7 @@
 <p>
     Short Name: <%= @state.short_name %>
 </p>
+<p>
+    <%= link_to 'Edit', edit_state_path(@state) %>
+    <%= link_to 'Back', states_path %>
+</p>

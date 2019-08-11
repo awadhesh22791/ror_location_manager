@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-lg-8">
+        <h1>States</h1>
+    </div>
+    <div class="col-lg-4">
+        <%= link_to 'New State', new_state_path,class:'float-right' %>
+    </div>
+    <div class="col-lg-12 <%= @states.length>0?'':'hidden' %>">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <th>Name</th>
+                <th>Short Name</th>
+                <th colspan=4>Action</th>
+            </thead>
+            <tbody>
+                <% @states.each do | state |%>
+                    <tr>
+                        <td><%= state.name %></td>
+                        <td><%= state.short_name %></td>
+                        <td><%= link_to "Show", state_path(state) %></td>
+                        <td><%= link_to "Edit", edit_state_path(state) %></td>
+                        <td></td>
+                    </tr>
+                <% end %>
+            </tbody>
+            <thead class="<%= @states.total_pages>1?'':'hidden'%>">
+                <th colspan='5'><%= paginate @states %></th>
+            </thead>
+        </table>
+    </div>
+    <div class='col-lg-12  <%= @states.length>0?'hidden':'' %>'>
+        No states available.
+    </div>
+</div>
