@@ -10,17 +10,8 @@
   </head>
 
   <body class="container">
-    <div class="row navbar navbar-dark bg-dark">
-      <div class="col-lg-3 navbar-brand m-0">
-        Brand Logo
-      </div>
-      <div class="col-lg-9 nav-item">
-        Menu
-      </div>
-    </div>
-    <div class="row">
-      <%= render 'layouts/messages' %>
-    </div>
+    <%= render 'layouts/navigation' %>    
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
