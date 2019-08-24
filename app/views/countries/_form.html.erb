@@ -1,23 +1,12 @@
+<%= render "shared/errors", obj:@country,formName:"country"%>
 <div class="row">
   <div class="col-lg-12">
     <%= form_with(model: country, local: true) do |form| %>
-      <% if country.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
-
-          <ul>
-          <% country.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
       <div class="form-group row">
         <div class="control-label col-lg-2">
           <%= form.label :name %>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <%= form.text_field :name, class: "form-control",placeholder:"Name",autofocus: true %>
         </div>
       </div>
@@ -26,7 +15,7 @@
         <div class="control-label col-lg-2">
           <%= form.label :short_name %>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <%= form.text_field :short_name, class: "form-control",placeholder: "Short Name" %>
         </div>        
       </div>
@@ -35,7 +24,7 @@
         <div class="control-label col-lg-2">
           <%= form.label :code %>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <%= form.text_field :code, class: "form-control",placeholder: "Country Code" %>
         </div>        
       </div>
