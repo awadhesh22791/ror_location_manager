@@ -6,19 +6,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Countries",countries_path,class: 'nav-link'%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "States",states_path,class: 'nav-link'%>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
+      <li class="nav-item dropdown">        
+        <%= link_to "Countries",countries_path,class: 'nav-link dropdown-toggle', id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"}, area: {expanded: "false"} %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to "List",countries_path,class: 'dropdown-item'%>
+          <%= link_to "New",new_country_path,class: 'dropdown-item'%>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">        
+        <%= link_to "States",states_path,class: 'nav-link dropdown-toggle', id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"}, area: {expanded: "false"} %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "List",states_path,class: 'dropdown-item'%>
+          <%= link_to "New",new_state_path,class: 'dropdown-item'%>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
