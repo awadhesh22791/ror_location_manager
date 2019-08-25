@@ -1,6 +1,9 @@
 <h2 class="center">Name: <%= @state.name%></h2>
 <div class="col-lg-12">
-  <div class="center"><strong>Short name:</strong><%= @state.short_name %></div>
+    <div class="center"><strong>Short name:</strong> <%= @state.short_name %></div>
+</div>
+<div class="col-lg-12">
+    <div class="center"><strong>Country:</strong> <%= @state.country.nil? ? "NA":@state.country.name %></div>
 </div>
 <div class="center col-lg-12 mt-2">
   <%= link_to 'Edit this state', edit_state_path(@state),class: "btn btn-sm btn-primary" %>
