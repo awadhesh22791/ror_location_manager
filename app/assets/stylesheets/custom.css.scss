@@ -15,6 +15,11 @@ nav.pagination span{
  .btn, .jumbotron, .dropdown-menu, .form-control{
     border-radius: 0px;    
  }
+ .btn{
+    -webkit-box-shadow: inset 1px 1px 9px 1px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: inset 1px 1px 9px 1px rgba(0, 0, 0, 0.11);
+    box-shadow: inset 1px 1px 9px 1px rgba(0, 0, 0, 0.11);
+ }
 .jumbotron{
     border-radius: 0px;
     height: 400px;
