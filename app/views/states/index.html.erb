@@ -10,6 +10,7 @@
             <thead>
                 <th>Name</th>
                 <th>Short Name</th>
+                <th>Country</th>
                 <th colspan=4>Action</th>
             </thead>
             <tbody>
@@ -17,6 +18,7 @@
                     <tr>
                         <td><%= state.name %></td>
                         <td><%= state.short_name %></td>
+                        <td><%= state.country.nil? ? 'NA':state.country.name %></td>
                         <td><%= link_to "Show", state_path(state) %></td>
                         <td><%= link_to "Edit", edit_state_path(state) %></td>
                         <td><%= link_to "Delete", state_path(state) ,method: :delete, data: {confirm: 'Are you sure?' } %></td>
