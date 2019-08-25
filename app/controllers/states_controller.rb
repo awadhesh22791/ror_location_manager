@@ -14,7 +14,7 @@ class StatesController < ApplicationController
         #render plain: params[:state].inspect
         @state=State.new(state_params)
         if @state.save
-            flash[:notice]='State was created successfully.'
+            flash[:success]='State was created successfully.'
             redirect_to state_path(@state)
         else
             render 'new'
@@ -29,7 +29,7 @@ class StatesController < ApplicationController
 
     def update
         if @state.update(state_params)
-            flash[:notice]="State updated successfully."
+            flash[:success]="State updated successfully."
             redirect_to state_path(@state)
         else
             render 'edit'
@@ -38,7 +38,7 @@ class StatesController < ApplicationController
 
     def destroy
         @state.destroy
-        flash[:notice]='State deleted successfully.'
+        flash[:danger]='State deleted successfully.'
         redirect_to states_path
     end
 
