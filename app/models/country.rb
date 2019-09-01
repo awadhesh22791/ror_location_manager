@@ -1,5 +1,5 @@
 class Country < ApplicationRecord
-    has_many :states
+    has_many :states, dependent: :destroy
     validates :name, presence: true,length: {minimum:3,maximum:45}
     validates :short_name, presence: true, length: {minimum:2,maximum:45}
     validates :code, presence: true, length: {minimum:2,maximum:45}
