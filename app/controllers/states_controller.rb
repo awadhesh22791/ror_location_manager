@@ -1,6 +1,7 @@
 class StatesController < ApplicationController
 
     before_action :set_state, only: [:edit,:show,:update,:destroy]
+    before_action :require_user
 
     def index
         @states=State.page params[:page]
