@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_state, only: [:edit,:show,:update,:destroy]
+    before_action :set_user, only: [:edit,:show,:update]
 
     def new
         @user=User.new
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     end
 
     private
-    def set_state
+    def set_user
         @user=User.find(params[:id])
     end
 
