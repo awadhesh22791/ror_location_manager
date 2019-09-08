@@ -1,8 +1,9 @@
 class CitiesController < ApplicationController
     before_action :set_city,only:[:show,:edit,:destroy,:update]
+    before_action :set_page_size,only:[:index]
 
-    def index
-        @cities=City.page params[:page]
+    def index        
+        @cities=City.page(params[:page]).per(@size)
     end
 
     def show

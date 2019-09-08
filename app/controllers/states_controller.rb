@@ -1,10 +1,11 @@
 class StatesController < ApplicationController
 
     before_action :set_state, only: [:edit,:show,:update,:destroy]
+    before_action :set_page_size,only:[:index]
     before_action :require_user
 
     def index
-        @states=State.page params[:page]
+        @states=State.page(params[:page]).per(@size)
     end
 
     def new

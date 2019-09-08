@@ -24,4 +24,13 @@ class ApplicationController < ActionController::Base
             redirect_to root_path
         end
     end
+
+    private
+        def set_page_size
+            if params[:records].to_i==0
+                @size=Kaminari.config.default_per_page
+            else
+                @size=params[:records].to_i
+            end
+        end
 end

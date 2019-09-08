@@ -1,11 +1,12 @@
 class CountriesController < ApplicationController
   before_action :set_country, only: [:show, :edit, :update, :destroy]
+  before_action :set_page_size,only:[:index]
   before_action :require_user
 
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.page params[:page]
+    @countries = Country.page(params[:page]).per(@size)
   end
 
   # GET /countries/1
