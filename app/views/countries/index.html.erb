@@ -28,8 +28,10 @@
           </tr>
         <% end %>
       </tbody>
-      <thead class="<%= @countries.total_pages>1?'':'hidden'%>">
-        <th colspan='6'><%= paginate @countries %></th>
+      <thead>
+        <th colspan='6'>
+          <%= render "shared/paginate",obj:@countries%>
+        </th>
       </thead>
     </table>
   </div>

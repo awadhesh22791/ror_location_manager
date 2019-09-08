@@ -34,8 +34,10 @@
                     </tr>
                 <% end %>
             </tbody>
-            <thead class="<%= @users.total_pages>1?'':'hidden'%>">
-                <th colspan='6'><%= paginate @users %></th>
+            <thead>
+                <th colspan='6'>
+                    <%= render "shared/paginate",obj:@users%>
+                </th>
             </thead>
         </table>
     </div>

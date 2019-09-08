@@ -28,8 +28,10 @@
           </tr>
         <% end %>
       </tbody>
-      <thead class="<%= @cities.total_pages>1?'':'hidden'%>">
-        <th colspan='6'><%= paginate @cities %></th>
+      <thead>
+        <th colspan='6'>
+          <%= render "shared/paginate",obj:@cities%>
+        </th>
       </thead>
     </table>
   </div>

@@ -1,0 +1,10 @@
+<span class="records-label">Records:&nbsp</span>
+<span class="records">
+    <form><input type="hidden" name="records" value="1"><button class="btn btn-primary btn-sm">1</button></form>
+    <form><input type="hidden" name="records" value="50"><button class="btn btn-primary btn-sm">50</button></form>
+    <form><input type="hidden" name="records" value="100"><button class="btn btn-primary btn-sm">100</button></form>
+    <form><input type="hidden" name="records" value="200"><button class="btn btn-primary btn-sm">200</button></form>
+</span>
+<span class="<%= obj.total_pages>1?'':'hidden'%>">
+    <%= paginate obj %>
+</span>
