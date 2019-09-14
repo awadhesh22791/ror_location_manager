@@ -12,6 +12,7 @@ class CountriesController < ApplicationController
   # GET /countries/1
   # GET /countries/1.json
   def show
+    # private set_country automatically fetch country by id to use.
   end
 
   # GET /countries/new
@@ -21,6 +22,7 @@ class CountriesController < ApplicationController
 
   # GET /countries/1/edit
   def edit
+    # private set_country automatically fetch country by id to populate data.
   end
 
   # POST /countries

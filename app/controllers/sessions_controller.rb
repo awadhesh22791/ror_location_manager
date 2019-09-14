@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     def new
+        # This show signup page.
     end
 
     def create

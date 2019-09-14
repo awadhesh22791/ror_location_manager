@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+        # private set_user automatically fetch user by id to populate.
     end
 
     def update
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        # private set_user automatically fetch user by id to use.
     end
 
     def index

@@ -24,9 +24,11 @@ class StatesController < ApplicationController
     end
 
     def show
+        # private set_state automatically fetch state by id to use.
     end
 
     def edit
+        # private set_state automatically fetch state by id populate data.
     end
 
     def update

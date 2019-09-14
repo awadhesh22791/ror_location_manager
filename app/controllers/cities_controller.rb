@@ -7,6 +7,7 @@ class CitiesController < ApplicationController
     end
 
     def show
+        # private set_city automatically fetch city by id to use.
     end
 
     def new
@@ -35,6 +36,7 @@ class CitiesController < ApplicationController
     end
 
     def edit
+        # private set_city automatically fetch city by id to populate data.
     end
 
     def destroy
