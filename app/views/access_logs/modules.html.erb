@@ -18,7 +18,7 @@
           <tr>
             <td><%= key %></td>
             <td><%= @modules[key] %></td>
-            <td><%= link_to 'Show', "#" %></td>
+            <td><a href="/access_logs/modules/show/<%= key %>">Show</td>
           </tr>
         <% end %>
       </tbody>
