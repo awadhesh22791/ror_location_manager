@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, except:[:new]
   resources :cities
+  resources :access_logs, only:[:index]
+  get 'access_logs/modules',to:'access_logs#modules'
   get 'login', to:'sessions#new'
   post 'login',to:'sessions#create'
   delete 'logout',to:'sessions#destroy'
