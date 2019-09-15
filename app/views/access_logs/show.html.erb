@@ -20,7 +20,7 @@
       <tbody>
         <% @logs.each do |log| %>
           <tr>
-            <td><%= log.ip %> | <%= log.id %></td>
+            <td><%= log.ip %></td>
             <td><%= log.created_at %></td>
             <td><%= link_to 'Block', "#" %></td>
             <td><%= link_to 'Unblock', "#" %></td>
