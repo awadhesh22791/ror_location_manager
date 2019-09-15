@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     add_flash_types :success, :warning, :danger, :info
-
+    before_action :add_access_log
     helper_method :current_user, :logged_in?
 
     def current_user
@@ -25,6 +25,15 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def add_access_log
+        @ip=request.env['HTTP_X_FORWARDED_FOR']
+        if @ip.nil?
+            @ip=request.remote_ip
+        end
+        @module_name="#{params[:controller]} -> #{params[:action]}"
+        AccessLog.create(:module_name=>@module_name,:ip=>@ip)
+    end
+
     private
         def set_page_size
             if params[:records].to_i==0
@@ -32,5 +41,5 @@ class ApplicationController < ActionController::Base
             else
                 @size=params[:records].to_i
             end
-        end
+        end       
 end
