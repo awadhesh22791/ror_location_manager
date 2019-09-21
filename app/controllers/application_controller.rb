@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
     before_action :add_access_log
     helper_method :current_user, :logged_in?
 
+    def require_admin
+        if !current_user.admin?
+            flash[:danger]="You must be admin to perform that action."
+            redirect_to root_path
+        end
+    end
+
     def current_user
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
