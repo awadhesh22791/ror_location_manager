@@ -1,0 +1,33 @@
+<%= render "shared/errors", obj:@whitelist_ip,formName:"whitelist_ip"%>
+<div class="row">
+  <div class="col-lg-12">
+    <%= form_for @whitelist_ip do |form| %>
+      <div class="form-group row">
+        <div class="control-label col-lg-2">
+          <%= form.label :ip %>
+        </div>
+        <div class="col-lg-6">
+          <%= form.text_field :ip, class: "form-control",placeholder:"Ip",autofocus: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="form-control-label col-lg-2">
+              <%= form.label :blocked %>
+          </div>                
+          <div class="col-lg-6">
+              <%= form.check_box :blocked %>
+          </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="offset-lg-2 col-lg-10">
+          <%= form.submit class:"btn btn-primary"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="offset-lg-2 col-lg-10">
+    [ <%= link_to 'Cancel and return to Ips', whitelisted_ips_path %> ]
+  </div>
+</div>

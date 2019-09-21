@@ -1,0 +1,11 @@
+<% content_for :title, "| #{@whitelist_ip.ip}" %>
+<h2 class="center">IP: <%= @whitelist_ip.ip%></h2>
+<div class="col-lg-12">
+    <div class="center"><strong>Status:</strong> <%= @whitelist_ip.blocked? ? "Blocked": "Not Blocked" %></div>
+</div>
+<div class="center col-lg-12 mt-2">
+  <%= link_to 'Edit this ip', edit_whitelisted_ip_path(@whitelist_ip),class: "btn btn-sm btn-primary" %>
+  <%= link_to 'Delete this ip', whitelisted_ip_path(@whitelist_ip),method: :delete,data: {confirm: 'Are you sure you want to delete the ip?'},
+  class:'btn btn-sm btn-danger'%>
+  <%= link_to 'View all Ips', whitelisted_ips_path,class:"btn btn-sm btn-success" %>
+</div>
