@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     add_flash_types :success, :warning, :danger, :info
     before_action :add_access_log
+    before_action :check_ip
     helper_method :current_user, :logged_in?
 
     def require_admin
@@ -39,6 +40,17 @@ class ApplicationController < ActionController::Base
         end
         @module_name="#{params[:controller]} -> #{params[:action]}"
         AccessLog.create(:module_name=>@module_name,:ip=>@ip)
+    end
+
+    def check_ip
+        @ip=request.env['HTTP_X_FORWARDED_FOR']
+        if @ip.nil?
+            @ip=request.remote_ip
+        end
+        @whitelisted_ip=WhitelistedIp.find_by ip:@ip
+        if !@whitelisted_ip.nil? && @whitelisted_ip.blocked
+            redirect_to '/blocked_ip'
+        end
     end
 
     private
